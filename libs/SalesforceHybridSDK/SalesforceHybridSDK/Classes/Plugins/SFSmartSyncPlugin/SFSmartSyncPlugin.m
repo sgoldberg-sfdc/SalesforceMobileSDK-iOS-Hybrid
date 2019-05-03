@@ -196,7 +196,7 @@ NSString *const kSyncStoreNameArg = @"storeName";
         CDVPluginResult* pluginResult;
         if (syncStatus == SFSyncStateStatusDone) {
             [SFSDKHybridLogger d:selfClass format:@"cleanResyncGhosts completed successfully"];
-            pluginResult =[CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsInt:numRecords];
+            pluginResult =[CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsInt:(int)numRecords];
         } else {
             [SFSDKHybridLogger e:selfClass format:@"cleanResyncGhosts did not complete successfully"];
             pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
